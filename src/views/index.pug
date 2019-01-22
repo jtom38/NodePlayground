@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  script
+    include ./file.js
+  
+
+  .alert
+  div(class="alert alert-primary" role="alert")
+    p This is a test

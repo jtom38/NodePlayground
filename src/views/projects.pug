@@ -1,0 +1,58 @@
+extends layout
+
+
+block content
+    h1=title
+    p.
+        I have public code available for viewing.  
+        Please see my GitHub account to see what I have worked on that I am allowed to show off.  
+        Not everything is in GitHub as alot of my work was done on the job.
+
+    a(href="https://github.com/luther38") Github
+    br
+    br
+
+    h2 PowerShell Modules
+        br
+
+
+        each item in PowerShellModules 
+            h3=item.Name
+            
+            each des in item.Description
+                p=des
+
+            if item.ProjectLink
+                img(src="/images/Icons/Github/GitHub-Mark-32px.png", alt="")
+                a(href=item.ProjectLink)  #{item.Name} On GitHub
+            br
+            hr
+    h2 PowerShell Processes
+        br
+        each item in PowerShellProcesses
+            h3=item.Name
+            
+            each des in item.Description
+                p=des
+
+            if item.PublicProject
+                img(src="/images/Icons/Github/GitHub-Mark-32px.png", alt="")
+                a(href=item.ProjectLink)  #{item.Name} On GitHub    
+            br
+            hr
+
+
+    h2 C# Projects
+        br
+        each item in CSharp
+            h3=item.Name
+            h5=item.ProjectType
+
+            each des in item.Description
+                p=des
+
+            if item.PublicProject
+                img(src="/images/Icons/Github/GitHub-Mark-32px.png", alt="")
+                a(href=item.ProjectLink)  #{item.Name} On GitHub
+            br
+            hr
