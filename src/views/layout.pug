@@ -9,9 +9,12 @@ html
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css")
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    nav(class="navbar", role="navigation", aria-label="navbar")
+      div(class=navbar-brand)
+        a(class="navbar-item", href="")
+
     section(class="section")
       div(class="containter")
-        h1="Bulma Test"
-        p(class="subtitle") this is a test?
+
 
       block content

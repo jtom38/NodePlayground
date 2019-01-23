@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "sass": "node-sass --omit-source-map-url src/mystyle.scss public/stylesheets/style.css",
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
@@ -13,6 +14,7 @@
     "debug": "~2.6.9",
     "eslint": "^5.12.1",
     "express": "~4.16.0",
+    "gulp": "^4.0.0",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "node-sass-middleware": "^0.11.0",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "bulma": "^0.7.2",
+    "gulp-sass": "^4.0.2",
     "node-sass": "^4.11.0"
   }
 }
