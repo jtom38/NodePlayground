@@ -2,57 +2,72 @@ extends layout
 
 
 block content
-    h1=title
+section(class="hero")
+    div(class="hero-body")
+        div(class="container")
+            h1(class="title")=title
+            h2(class="subtitle")=subtitle
+
     p.
         I have public code available for viewing.  
         Please see my GitHub account to see what I have worked on that I am allowed to show off.  
-        Not everything is in GitHub as alot of my work was done on the job.
+        Not everything is in GitHub as alot of my work was done on the job, thus closed source.
+
 
     a(href="https://github.com/luther38") Github
     br
     br
 
-    h2 PowerShell Modules
+    section(class="hero")
+        div(class="hero-body")
+            div(class="container")
+                h1(class="title") PowerShell Modules
+                h2(class="subtitle") All public on GitHub
+
+
+    each item in PowerShellModules 
+
+        h4(class="title is-h4")=item.Name
+        
+        each des in item.Description
+            p=des
         br
-
-
-        each item in PowerShellModules 
-            h3=item.Name
-            
-            each des in item.Description
-                p=des
-
-            if item.ProjectLink
+        if item.ProjectLink
+            a(href=item.ProjectLink)
                 img(src="/images/Icons/Github/GitHub-Mark-32px.png", alt="")
-                a(href=item.ProjectLink)  #{item.Name} On GitHub
-            br
-            hr
+            
+        br
+        hr
     h2 PowerShell Processes
         br
         each item in PowerShellProcesses
-            h3=item.Name
+            h4(class="title is-h4")=item.Name
             
             each des in item.Description
                 p=des
 
             if item.PublicProject
-                img(src="/images/Icons/Github/GitHub-Mark-32px.png", alt="")
-                a(href=item.ProjectLink)  #{item.Name} On GitHub    
-            br
-            hr
-
-
-    h2 C# Projects
+                a(href=item.ProjectLink)
+                    img(src="/images/Icons/Github/GitHub-Mark-32px.png", alt="")
         br
-        each item in CSharp
-            h3=item.Name
-            h5=item.ProjectType
+        hr
 
-            each des in item.Description
-                p=des
+    section(class="hero")
+        div(class="hero-body")
+            div(class="container")
+                h1(class="title") C# Projects
+                h2(class="subtitle") Some of these are closed source
 
-            if item.PublicProject
-                img(src="/images/Icons/Github/GitHub-Mark-32px.png", alt="")
-                a(href=item.ProjectLink)  #{item.Name} On GitHub
-            br
-            hr
+    br
+    each item in CSharp
+        h4(class="title is-h4")=item.Name
+        h5=item.ProjectType
+
+        each des in item.Description
+            p=des
+
+        if item.PublicProject
+            img(src="/images/Icons/Github/GitHub-Mark-32px.png", alt="")
+            a(href=item.ProjectLink)  #{item.Name} On GitHub
+        br
+        hr

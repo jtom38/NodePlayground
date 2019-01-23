@@ -11,7 +11,8 @@ router.get('/', function(req, res, next) {
 
 router.get('/projects', function(req, res, next) {
   res.render('projects', {
-    title: "Projects", 
+    title: "All of my Projects!", 
+    subtitle: "The place to learn what I have done and working on currently.",
     PowerShellModules : projects.PowerShell.Modules,
     PowerShellProcesses: projects.PowerShell.Processes,
     CSharp: projects.CSharp
