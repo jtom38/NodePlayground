@@ -10,9 +10,24 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     nav(class="navbar", role="navigation", aria-label="navbar")
-      div(class=navbar-brand)
+      div(class="navbar-brand")
         a(class="navbar-item", href="")
+          img(src="")
         
+        a(class="navbar-burger burger" role="button" aria-label="menu" aria-expanded)
+          span(aria-hidden="true")
+          span(aria-hidden="true")
+          span(aria-hidden="true")
+      
+      div(class="navbar-menu" id="navbarItems")
+        div(class="navbar-start")
+          a(class="navbar-item" href="/") Root
+
+      div(class="navbar-menu")
+        div(class="navbar-end")
+          a(class="navbar-item" href="/projects") Projects
+          a(class="navbar-item" href="/resume") Experience
+
     section(class="section")
       div(class="container")
         block content
